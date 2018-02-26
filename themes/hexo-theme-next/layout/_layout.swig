@@ -88,5 +88,10 @@
   {% include '_third-party/mathjax.swig' %}
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
+
+  {#
+  <script type="text/javascript" color="86,124,195" opacity='1' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  #}
+  
 </body>
 </html>
