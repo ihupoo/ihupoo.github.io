@@ -9,9 +9,10 @@ categories: node
 * [cheerio](https://github.com/cheeriojs/cheerio) : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。
 <!--more-->
 * [eventProxy](https://github.com/JacksonTian/eventproxy) : 事件发布订阅工具，个人感觉有点像轻量级的rxjs，可用于解决回调金字塔（当然async也可以）。
-* [supertest](https://github.com/tj/supertest) ： 测试库，同样是tj大神的，用来配合 express（准确来说是所有兼容connect 的web框架）进行集成测试。
+* [supertest](https://github.com/tj/supertest) ： 测试库，同样是tj大神的，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试。
 * [mongoose](http://mongoosejs.com/docs/guide.html) : mongodb的odm（Object-Document Mapping ，对象文档映射），用于操作mongodb。
 * [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) : 反向代理（webpack也采用这个）
+* [nodemon](https://github.com/remy/nodemon) : 调试用，启动了服务之后，修改文件可以自动重启服务。
 
 ## express库
 * [cookie-parser](https://github.com/expressjs/cookie-parser) : express 4.x 操作cookie。
@@ -19,3 +20,8 @@ categories: node
 * [connect-redis](https://github.com/tj/connect-redis) :  操作session时设置redis缓存，来实现进程间共享session。
 * [connect-mongo](https://www.npmjs.com/package/connect-mongo) :  操作session时,将 session 存储于 mongodb，需结合 express-session 使用。
 * [connect-flash](https://www.npmjs.com/package/connect-flash) : 基于session 实现的用于通知功能的中间件，需结合 express-session 使用。
+
+## koa2库
+* [koa-convert](https://www.npmjs.com/package/koa-convert) : 对generator中间件的转换，例如 app.use(convert(json()))等等。
+* [koa-logger](https://github.com/koajs/logger) : koa开发时替换console.log输出。
+* [log4js-node](https://github.com/log4js-node/log4js-node) : 需要按照时间或者按照文件大小，本地输出log文件，可以使用邮件等形式发送日志。
