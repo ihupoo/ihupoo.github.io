@@ -25,3 +25,4 @@ categories: node
 * [koa-convert](https://www.npmjs.com/package/koa-convert) : 对generator中间件的转换，例如 app.use(convert(json()))等等。
 * [koa-logger](https://github.com/koajs/logger) : koa开发时替换console.log输出。
 * [log4js-node](https://github.com/log4js-node/log4js-node) : 需要按照时间或者按照文件大小，本地输出log文件，可以使用邮件等形式发送日志。
+* [koa-bodyparser](https://github.com/koajs/bodyparser) : 把koa2上下文的formData数据解析到ctx.request.body，在上传文件比较好用。xml数据可以用koa-xml-body。
