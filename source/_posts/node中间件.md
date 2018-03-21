@@ -22,8 +22,9 @@ categories: node
 * [connect-flash](https://www.npmjs.com/package/connect-flash) : 基于session 实现的用于通知功能的中间件，需结合 express-session 使用。
 
 ## koa2库
+* [koa-router](https://github.com/alexmingoia/koa-router) : 路由中间件。
 * [koa-convert](https://github.com/koajs/convert) : 对generator中间件的转换，例如 app.use(convert(json()))等等。
 * [koa-logger](https://github.com/koajs/logger) : koa开发时替换console.log输出。
 * [log4js-node](https://github.com/log4js-node/log4js-node) : 需要按照时间或者按照文件大小，本地输出log文件，可以使用邮件等形式发送日志。
 * [koa-bodyparser](https://github.com/koajs/bodyparser) : 把koa2上下文的formData数据解析到ctx.request.body，在上传文件比较好用。xml数据可以用koa-xml-body。
-* [koa-static](https://github.com/koajs/static) : 静态资源中间件
+* [koa-static](https://github.com/koajs/static) : 静态资源中间件,和koa-router一起用，假如请求路径重名，优先级高。
