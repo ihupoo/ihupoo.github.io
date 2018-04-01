@@ -13,6 +13,8 @@ categories: node
 * [mongoose](http://mongoosejs.com/docs/guide.html) : mongodb的odm（Object-Document Mapping ，对象文档映射），用于操作mongodb。
 * [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) : 反向代理（webpack也采用这个）
 * [nodemon](https://github.com/remy/nodemon) : 调试用，启动了服务之后，修改文件可以自动重启服务。
+* [node-schedule](https://github.com/node-schedule/node-schedule) : 定时器/job任务，适合复杂的时间调度，例如每周一每小时的20分钟和50分钟做something，普通的setInterval适合每60秒执行什么任务，较为简单容易。
+* [decimal.js](https://github.com/MikeMcl/decimal.js) : 浮点计算
 
 ## express库
 * [cookie-parser](https://github.com/expressjs/cookie-parser) : express 4.x 操作cookie。
@@ -28,3 +30,4 @@ categories: node
 * [log4js-node](https://github.com/log4js-node/log4js-node) : 需要按照时间或者按照文件大小，本地输出log文件，可以使用邮件等形式发送日志。
 * [koa-bodyparser](https://github.com/koajs/bodyparser) : 把koa2上下文的formData数据解析到ctx.request.body，在上传文件比较好用。xml数据可以用koa-xml-body。
 * [koa-static](https://github.com/koajs/static) : 静态资源中间件,和koa-router一起用，假如请求路径重名，优先级高。
+* [koa-session-minimal](https://github.com/longztian/koa-session-minimal)/[koa-session](https://github.com/koajs/session) : session中间件，提供存储介质的读写接口。
