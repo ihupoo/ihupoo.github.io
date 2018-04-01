@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="node,express,koa," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hupoo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="node库 superagent : http库，可以发起get，post等请求，常用于爬虫或者代理。 cheerio : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。">
+<meta name="keywords" content="node,express,koa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node常用库">
+<meta property="og:url" content="http://yoursite.com/2018/04/01/node中间件/index.html">
 <meta property="og:site_name" content="Hupoo">
+<meta property="og:description" content="node库 superagent : http库，可以发起get，post等请求，常用于爬虫或者代理。 cheerio : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-01T07:51:19.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hupoo">
+<meta name="twitter:title" content="node常用库">
+<meta name="twitter:description" content="node库 superagent : http库，可以发起get，post等请求，常用于爬虫或者代理。 cheerio : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/01/node中间件/"/>
 
 
 
 
 
-  <title>Hupoo</title>
+  <title>node常用库 | Hupoo</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -266,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/01/node中间件/" itemprop="url">node常用库</a></h1>
+          <h1 class="post-title" itemprop="name headline">node常用库</h1>
         
 
         <div class="post-meta">
@@ -352,18 +354,34 @@
       
 
       
-        
-          <h2 id="node库"><a href="#node库" class="headerlink" title="node库"></a>node库</h2><ul>
+        <h2 id="node库"><a href="#node库" class="headerlink" title="node库"></a>node库</h2><ul>
 <li><a href="https://visionmedia.github.io/superagent/" target="_blank" rel="noopener">superagent</a> : http库，可以发起get，post等请求，常用于爬虫或者代理。</li>
-<li><a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">cheerio</a> : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/01/node中间件/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<li><a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">cheerio</a> : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。<a id="more"></a></li>
+<li><a href="https://github.com/JacksonTian/eventproxy" target="_blank" rel="noopener">eventProxy</a> : 事件发布订阅工具，个人感觉有点像轻量级的rxjs，可用于解决回调金字塔（当然async也可以）。</li>
+<li><a href="https://github.com/tj/supertest" target="_blank" rel="noopener">supertest</a> ： 测试库，同样是tj大神的，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试。</li>
+<li><a href="http://mongoosejs.com/docs/guide.html" target="_blank" rel="noopener">mongoose</a> : mongodb的odm（Object-Document Mapping ，对象文档映射），用于操作mongodb。</li>
+<li><a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="noopener">http-proxy-middleware</a> : 反向代理（webpack也采用这个）</li>
+<li><a href="https://github.com/remy/nodemon" target="_blank" rel="noopener">nodemon</a> : 调试用，启动了服务之后，修改文件可以自动重启服务。</li>
+<li><a href="https://github.com/node-schedule/node-schedule" target="_blank" rel="noopener">node-schedule</a> : 定时器/job任务，适合复杂的时间调度，例如每周一每小时的20分钟和50分钟做something，普通的setInterval适合每60秒执行什么任务，较为简单容易。</li>
+<li><a href="https://github.com/MikeMcl/decimal.js" target="_blank" rel="noopener">decimal.js</a> : 浮点计算</li>
+</ul>
+<h2 id="express库"><a href="#express库" class="headerlink" title="express库"></a>express库</h2><ul>
+<li><a href="https://github.com/expressjs/cookie-parser" target="_blank" rel="noopener">cookie-parser</a> : express 4.x 操作cookie。</li>
+<li><a href="https://github.com/expressjs/session" target="_blank" rel="noopener">express-session</a> : 操作session。</li>
+<li><a href="https://github.com/tj/connect-redis" target="_blank" rel="noopener">connect-redis</a> :  操作session时设置redis缓存，来实现进程间共享session。</li>
+<li><a href="https://www.npmjs.com/package/connect-mongo" target="_blank" rel="noopener">connect-mongo</a> :  操作session时,将 session 存储于 mongodb，需结合 express-session 使用。</li>
+<li><a href="https://www.npmjs.com/package/connect-flash" target="_blank" rel="noopener">connect-flash</a> : 基于session 实现的用于通知功能的中间件，需结合 express-session 使用。</li>
+</ul>
+<h2 id="koa2库"><a href="#koa2库" class="headerlink" title="koa2库"></a>koa2库</h2><ul>
+<li><a href="https://github.com/alexmingoia/koa-router" target="_blank" rel="noopener">koa-router</a> : 路由中间件。</li>
+<li><a href="https://github.com/koajs/convert" target="_blank" rel="noopener">koa-convert</a> : 对generator中间件的转换，例如 app.use(convert(json()))等等。</li>
+<li><a href="https://github.com/koajs/logger" target="_blank" rel="noopener">koa-logger</a> : koa开发时替换console.log输出。</li>
+<li><a href="https://github.com/log4js-node/log4js-node" target="_blank" rel="noopener">log4js-node</a> : 需要按照时间或者按照文件大小，本地输出log文件，可以使用邮件等形式发送日志。</li>
+<li><a href="https://github.com/koajs/bodyparser" target="_blank" rel="noopener">koa-bodyparser</a> : 把koa2上下文的formData数据解析到ctx.request.body，在上传文件比较好用。xml数据可以用koa-xml-body。</li>
+<li><a href="https://github.com/koajs/static" target="_blank" rel="noopener">koa-static</a> : 静态资源中间件,和koa-router一起用，假如请求路径重名，优先级高。</li>
+<li><a href="https://github.com/longztian/koa-session-minimal" target="_blank" rel="noopener">koa-session-minimal</a>/<a href="https://github.com/koajs/session" target="_blank" rel="noopener">koa-session</a> : session中间件，提供存储介质的读写接口。</li>
+</ul>
+
       
     </div>
     
@@ -378,14 +396,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/node/" rel="tag"># node</a>
+          
+            <a href="/tags/express/" rel="tag"># express</a>
+          
+            <a href="/tags/koa/" rel="tag"># koa</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -395,10 +423,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -406,6 +435,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -426,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -501,6 +548,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#node库"><span class="nav-number">1.</span> <span class="nav-text">node库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#express库"><span class="nav-number">2.</span> <span class="nav-text">express库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#koa2库"><span class="nav-number">3.</span> <span class="nav-text">koa2库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -637,6 +700,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -660,6 +727,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 101800, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 101800, xid: "2018/04/01/node中间件/"});
 		
 
 		(function() {
