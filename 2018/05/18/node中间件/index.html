@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="node库 superagent : http库，可以发起get，post等请求，常用于爬虫或者代理。 cheerio : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。">
+<meta name="description" content="node库 通用 pm2 : node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等。   调试/测试 nodemon : node调试工具，自动重启服务，开发时候很好用。 supertest ： 测试库，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试，属于http请求测试库。其他测试有mocha（框架测试），c">
 <meta name="keywords" content="node,express,koa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node常用库">
-<meta property="og:url" content="http://yoursite.com/2018/04/01/node中间件/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/18/node中间件/index.html">
 <meta property="og:site_name" content="Hupoo">
-<meta property="og:description" content="node库 superagent : http库，可以发起get，post等请求，常用于爬虫或者代理。 cheerio : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。">
+<meta property="og:description" content="node库 通用 pm2 : node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等。   调试/测试 nodemon : node调试工具，自动重启服务，开发时候很好用。 supertest ： 测试库，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试，属于http请求测试库。其他测试有mocha（框架测试），c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T07:51:19.496Z">
+<meta property="og:updated_time" content="2018-05-18T14:14:41.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node常用库">
-<meta name="twitter:description" content="node库 superagent : http库，可以发起get，post等请求，常用于爬虫或者代理。 cheerio : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。">
+<meta name="twitter:description" content="node库 通用 pm2 : node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等。   调试/测试 nodemon : node调试工具，自动重启服务，开发时候很好用。 supertest ： 测试库，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试，属于http请求测试库。其他测试有mocha（框架测试），c">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/01/node中间件/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/18/node中间件/"/>
 
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/node中间件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/node中间件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hupoo">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T15:51:19+08:00">
-                2018-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T22:14:41+08:00">
+                2018-05-18
               </time>
             
 
@@ -324,8 +324,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/01/node中间件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/04/01/node中间件/" itemprop="commentsCount"></span>
+                <a href="/2018/05/18/node中间件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/05/18/node中间件/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -355,31 +355,84 @@
 
       
         <h2 id="node库"><a href="#node库" class="headerlink" title="node库"></a>node库</h2><ul>
-<li><a href="https://visionmedia.github.io/superagent/" target="_blank" rel="noopener">superagent</a> : http库，可以发起get，post等请求，常用于爬虫或者代理。</li>
-<li><a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">cheerio</a> : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。<a id="more"></a></li>
-<li><a href="https://github.com/JacksonTian/eventproxy" target="_blank" rel="noopener">eventProxy</a> : 事件发布订阅工具，个人感觉有点像轻量级的rxjs，可用于解决回调金字塔（当然async也可以）。</li>
-<li><a href="https://github.com/tj/supertest" target="_blank" rel="noopener">supertest</a> ： 测试库，同样是tj大神的，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试。</li>
+<li>通用<ul>
+<li><a href="http://pm2.keymetrics.io" target="_blank" rel="noopener">pm2</a> : node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等。</li>
+</ul>
+</li>
+<li>调试/测试<ul>
+<li><a href="https://github.com/remy/nodemon" target="_blank" rel="noopener">nodemon</a> : node调试工具，自动重启服务，开发时候很好用。</li>
+<li><a href="https://github.com/tj/supertest" target="_blank" rel="noopener">supertest</a> ： 测试库，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试，属于http请求测试库。其他测试有mocha（框架测试），chai（测试结果断言库）<a id="more"></a></li>
+</ul>
+</li>
+<li>代理<ul>
+<li><a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="noopener">http-proxy-middleware</a> : 反向代理（webpack也采用这个）。</li>
+<li><a href="https://github.com/avwo/whistle" target="_blank" rel="noopener">whistle</a> : 反向代理，据说很好用。</li>
+</ul>
+</li>
+<li>数据库<ul>
 <li><a href="http://mongoosejs.com/docs/guide.html" target="_blank" rel="noopener">mongoose</a> : mongodb的odm（Object-Document Mapping ，对象文档映射），用于操作mongodb。</li>
-<li><a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="noopener">http-proxy-middleware</a> : 反向代理（webpack也采用这个）</li>
-<li><a href="https://github.com/remy/nodemon" target="_blank" rel="noopener">nodemon</a> : 调试用，启动了服务之后，修改文件可以自动重启服务。</li>
-<li><a href="https://github.com/node-schedule/node-schedule" target="_blank" rel="noopener">node-schedule</a> : 定时器/job任务，适合复杂的时间调度，例如每周一每小时的20分钟和50分钟做something，普通的setInterval适合每60秒执行什么任务，较为简单容易。</li>
+<li><a href="https://github.com/mysqljs/mysql" target="_blank" rel="noopener">mysql</a> : node操作MySQL的引擎，可以在node.js环境下对MySQL数据库进行建表，增、删、改、查等操作。</li>
+</ul>
+</li>
+<li>爬虫<ul>
+<li><a href="https://visionmedia.github.io/superagent/" target="_blank" rel="noopener">superagent</a> : http库，可以发起get，post等请求，常用于爬虫或者代理。</li>
+<li><a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">cheerio</a> : 网页处理库，node.js版的jquery，可用类似api实现网页中css selector取数据，常用于爬虫。</li>
+</ul>
+</li>
+<li>其他工具<ul>
 <li><a href="https://github.com/MikeMcl/decimal.js" target="_blank" rel="noopener">decimal.js</a> : 浮点计算</li>
+<li><a href="https://github.com/JacksonTian/eventproxy" target="_blank" rel="noopener">eventProxy</a> : 事件发布订阅工具，个人感觉有点像轻量级的rxjs，可用于解决回调金字塔（当然async也可以）。</li>
+<li><a href="https://github.com/node-schedule/node-schedule" target="_blank" rel="noopener">node-schedule</a> : 定时器/job任务，适合复杂的时间调度，例如每周一每小时的20分钟和50分钟做something，普通的setInterval适合每60秒执行什么任务，较为简单容易。</li>
+</ul>
+</li>
 </ul>
 <h2 id="express库"><a href="#express库" class="headerlink" title="express库"></a>express库</h2><ul>
+<li>cookie<ul>
 <li><a href="https://github.com/expressjs/cookie-parser" target="_blank" rel="noopener">cookie-parser</a> : express 4.x 操作cookie。</li>
+</ul>
+</li>
+<li>session<ul>
 <li><a href="https://github.com/expressjs/session" target="_blank" rel="noopener">express-session</a> : 操作session。</li>
 <li><a href="https://github.com/tj/connect-redis" target="_blank" rel="noopener">connect-redis</a> :  操作session时设置redis缓存，来实现进程间共享session。</li>
 <li><a href="https://www.npmjs.com/package/connect-mongo" target="_blank" rel="noopener">connect-mongo</a> :  操作session时,将 session 存储于 mongodb，需结合 express-session 使用。</li>
 <li><a href="https://www.npmjs.com/package/connect-flash" target="_blank" rel="noopener">connect-flash</a> : 基于session 实现的用于通知功能的中间件，需结合 express-session 使用。</li>
 </ul>
+</li>
+</ul>
 <h2 id="koa2库"><a href="#koa2库" class="headerlink" title="koa2库"></a>koa2库</h2><ul>
-<li><a href="https://github.com/alexmingoia/koa-router" target="_blank" rel="noopener">koa-router</a> : 路由中间件。</li>
+<li>路由<ul>
+<li><a href="https://github.com/alexmingoia/koa-router" target="_blank" rel="noopener">koa-router</a> : 路由中间件，使用后不管html文件具体在什么位置，跳转html使用路由路径。</li>
+</ul>
+</li>
+<li>迁移工具<ul>
 <li><a href="https://github.com/koajs/convert" target="_blank" rel="noopener">koa-convert</a> : 对generator中间件的转换，例如 app.use(convert(json()))等等。</li>
+</ul>
+</li>
+<li>日志<ul>
 <li><a href="https://github.com/koajs/logger" target="_blank" rel="noopener">koa-logger</a> : koa开发时替换console.log输出。</li>
 <li><a href="https://github.com/log4js-node/log4js-node" target="_blank" rel="noopener">log4js-node</a> : 需要按照时间或者按照文件大小，本地输出log文件，可以使用邮件等形式发送日志。</li>
-<li><a href="https://github.com/koajs/bodyparser" target="_blank" rel="noopener">koa-bodyparser</a> : 把koa2上下文的formData数据解析到ctx.request.body，在上传文件比较好用。xml数据可以用koa-xml-body。</li>
+</ul>
+</li>
+<li>请求<ul>
 <li><a href="https://github.com/koajs/static" target="_blank" rel="noopener">koa-static</a> : 静态资源中间件,和koa-router一起用，假如请求路径重名，优先级高。</li>
+<li><a href="https://github.com/koajs/bodyparser" target="_blank" rel="noopener">koa-bodyparser</a> : 把koa2上下文的formData数据解析到ctx.request.body。xml数据可以用koa-xml-body。</li>
+<li><a href="https://github.com/mscdex/busboy" target="_blank" rel="noopener">busboy</a> : 解析POST请求，node原生req中的文件流，用于上传文件。</li>
+<li><a href="https://github.com/queckezz/koa-views" target="_blank" rel="noopener">koa-jsonp</a> : 直接处理jsonp请求。</li>
+</ul>
+</li>
+<li>session<ul>
 <li><a href="https://github.com/longztian/koa-session-minimal" target="_blank" rel="noopener">koa-session-minimal</a>/<a href="https://github.com/koajs/session" target="_blank" rel="noopener">koa-session</a> : session中间件，提供存储介质的读写接口。</li>
+<li><a href="https://github.com/tb01923/koa-mysql-session" target="_blank" rel="noopener">koa-mysql-session</a> : koa-session-minimal中间件提供MySQL数据库的session数据读写操作。</li>
+</ul>
+</li>
+<li>模板引擎<ul>
+<li><a href="https://github.com/queckezz/koa-views" target="_blank" rel="noopener">koa-views</a> : 模板引擎，可搭配pug等使用。</li>
+</ul>
+</li>
+<li>错误获取<ul>
+<li><a href="https://github.com/koajs/onerror" target="_blank" rel="noopener">koa-onerror</a> : 错误信息，hack了ctx.onerror，能够在一个地方处理所有的错误。</li>
+</ul>
+</li>
 </ul>
 
       
@@ -728,7 +781,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 101800, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 101800, xid: "2018/04/01/node中间件/"});
+		_hcwp.push({widget:"Stream", widget_id: 101800, xid: "2018/05/18/node中间件/"});
 		
 
 		(function() {
