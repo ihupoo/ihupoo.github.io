@@ -56,4 +56,6 @@ categories: node
     * [koa-onerror](https://github.com/koajs/onerror) : 错误信息，hack了ctx.onerror，能够在一个地方处理所有的错误。
 * token
     * [koa-jwt](https://github.com/haorui/koa-jwt) : koa中间件，验证json web tokens模块。
-    * [jsonwebtoken](https://github.com/koajs/onerror) : 生成token，可以和koa-jwt配合使用。
+    * [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) : 生成token，可以和koa-jwt配合使用。
+* 压缩
+    * [koa-compress](https://github.com/koajs/compress) : 压缩工具，可以采用Gzip等压缩。
