@@ -54,3 +54,6 @@ categories: node
     * [koa-views](https://github.com/queckezz/koa-views) : 模板引擎，可搭配pug等使用。
 * 错误获取
     * [koa-onerror](https://github.com/koajs/onerror) : 错误信息，hack了ctx.onerror，能够在一个地方处理所有的错误。
+* token
+    * [koa-jwt](https://github.com/haorui/koa-jwt) : koa中间件，验证json web tokens模块。
+    * [jsonwebtoken](https://github.com/koajs/onerror) : 生成token，可以和koa-jwt配合使用。
