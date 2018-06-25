@@ -183,13 +183,37 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
 * `webpack-bundle-analyzer` 可视化定位体积大的模块
     ```javascript
         const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+        //.....
         plugins: [
             new BundleAnalyzerPlugin() // 使用默认配置，启动127.0.0.1:8888
         ],
     ```
 
-* `happypack` 开启多个子进程，加快 webpack 打包速度，webpack4 需要 `happypack@next` 
-     
+* `happypack` 开启多个子进程，加快 webpack 打包速度，webpack4 需要 `happypack@next`, 由于其对`file-loader`, `url-loader` 支持的不友好，不建议对这两 loader 使用。
+    ```javascript
+        const Happypack = require('happypack');
+        const os = require('os');
+        const happyThreadPool = Happypack.ThreadPool({ size: os.cpus().length });  //cpu 核数
+
+        //......
+        module:{
+            rules:[
+                {
+                    test: /\.js$/,
+                    use: 'happypack/loader?id=js',
+                    exclude: /node_modules/             
+                },
+                {
+                    test: /\.css$/,
+                    use: [{
+                        loader:...
+                    },{
+                        loader:'happypack/loader?id=css'
+                    }]
+                }
+            ]
+        }
+    ```
 
 ## 更多
 本代码示例 
