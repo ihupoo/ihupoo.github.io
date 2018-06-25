@@ -72,7 +72,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-next
+# theme: hexo-theme-next
+theme: even
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -80,3 +81,5 @@ deploy:
   type: git
   repository: git@github.com:ihupoo/ihupoo.github.io.git
   branch: master
+
+

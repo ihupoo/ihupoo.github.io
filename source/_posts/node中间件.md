@@ -10,6 +10,7 @@ categories: node
 * 调试/测试
     * [nodemon](https://github.com/remy/nodemon) : node调试工具，自动重启服务，开发时候很好用。
     * [supertest](https://github.com/tj/supertest) ： 测试库，用来配合 express（准确来说是所有兼容connect的web框架）进行集成测试，属于http请求测试库。其他测试有mocha（框架测试），chai（测试结果断言库）
+    
 <!--more-->
 * 代理
     * [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) : 反向代理（webpack也采用这个）。

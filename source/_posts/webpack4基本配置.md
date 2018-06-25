@@ -6,8 +6,9 @@ categories: webpack
 ## webpack4 特性
 webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认引入了，相对简化了配置项。实际上，一般项目 webpack4 与 webpack3 在基本配置上差别并不是很大，主要有以下不同 ：
 * webpack4 需要配合 webpack-cli 一起使用
-* webpack4 增加了 `mode` 属性，设置为 `development` / `production`
+
 <!--more-->
+* webpack4 增加了 `mode` 属性，设置为 `development` / `production`
     * `development`
         1. process.env.NODE_ENV 的值设为 `development`
         2. 默认开启以下插件，充分利用了持久化缓存。参考[基于 webpack 的持久化缓存方案](https://github.com/pigcan/blog/issues/9)
@@ -142,11 +143,12 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
             three:'THREE' //属性是three,即排除 import 'three' 中的 three 模块，'THREE'则用于检索一个全局 THREE 变量
         }
     ```
+
 然后是 `optimization` ，替代了原来的 `CommonsChunkPlugin` 公共代码抽离 :
 ```javascript
         optimization: {
             splitChunks: {
-                chunks: 'all',
+                chunks: 'all',                              //'all'|'async'|'initial'(全部|按需加载|初始加载)的chunks
                 // maxAsyncRequests: 1,                     // 最大异步请求数， 默认1
                 // maxInitialRequests: 1,                   // 最大初始化请求书，默认1
                 cacheGroups: {
@@ -177,11 +179,6 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
 ```
 同样 `manifest`, `vendor`, `utils` 都需要在 `HtmlWebpackPlugin` 的 `chunks` 里加上。
 
-
-
-
-
-
 ## 一些 webpack 优化
 * `webpack-bundle-analyzer` 可视化定位体积大的模块
     ```javascript
@@ -192,7 +189,7 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
     ```
 
 * `happypack` 开启多个子进程，加快 webpack 打包速度，webpack4 需要 `happypack@next` 
-
+     
 
 ## 更多
 本代码示例 
