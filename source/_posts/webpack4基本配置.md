@@ -11,19 +11,29 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
 * webpack4 增加了 `mode` 属性，设置为 `development` / `production`
     * `development`
         1. process.env.NODE_ENV 的值设为 `development`
+
         2. 默认开启以下插件，充分利用了持久化缓存。参考[基于 webpack 的持久化缓存方案](https://github.com/pigcan/blog/issues/9)
             * `NamedChunksPlugin` ：以名称固化 chunk id
+
             * `NamedModulesPlugin` ：以名称固化 module id
     * `production`
         1. process.env.NODE_ENV 的值设为 `production`
+
         2. 默认开启以下插件，其中 `SideEffectsFlagPlugin` 和 `UglifyJsPlugin` 用于 `tree-shaking`
             * `FlagDependencyUsagePlugin` ：编译时标记依赖
+
             * `FlagIncludedChunksPlugin` ：标记子chunks，防子chunks多次加载
-            * `ModuleConcatenationPlugin` ：作用域提升(scope hosting),预编译功能,提升或者预编译所有模块到一个闭包中，提升代码在浏览器中的执行速度。
+
+            * `ModuleConcatenationPlugin` ：作用域提升(scope hosting),预编译功能,提升或者预编译所有模块到一个闭包中，提升代码在浏览器中的执行速度
+
             * `NoEmitOnErrorsPlugin` ：在输出阶段时，遇到编译错误跳过
+
             * `OccurrenceOrderPlugin` ：给经常使用的ids更短的值
-            * `SideEffectsFlagPlugin` ：识别 package.json 或者 module.rules 的 sideEffects 标志（纯的 ES2015 模块)，安全地删除未用到的 export 导出。
+
+            * `SideEffectsFlagPlugin` ：识别 package.json 或者 module.rules 的 sideEffects 标志（纯的 ES2015 模块)，安全地删除未用到的 export 导出
+
             * `UglifyJsPlugin` ：删除未引用代码，并压缩
+
 * webpack4 删除了 `CommonsChunkPlugin` 插件，改用 optimization 属性,重点是 `splitChunks` (自定义公用代码提取—vendor) 和 `runtimeChunk` (webpack运行代码提取—manifest)
 * webpack4 增加了 WebAssembly 的支持，可以直接 import/export wasm 模块，也可以通过编写 loaders 直接 import C++/C/Rust
 
@@ -93,14 +103,6 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
                     use: 'babel-loader',
                     // include: /src/,                      //只转化src目录下js
                     exclude: /node_modules/                 //不转化node_modules目录下js
-                },
-                {
-                    test: /\.css$/,
-                    use: ['style-loader', 'css-loader', 'postcss-loader']
-                },
-                {
-                    test: /\.scss$/,
-                    use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
                 },
                 {
                     test: /\.(html|htm)$/,
@@ -179,6 +181,67 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
 ```
 同样 `manifest`, `vendor`, `utils` 都需要在 `HtmlWebpackPlugin` 的 `chunks` 里加上。
 
+#### webpack.dev.conf.js
+开发环境下，通过 `webpack-merge` 添加上需要的更多开发配置，示例如下：
+```javascript
+    const webpack = require('webpack');
+    const merge = require('webpack-merge');
+    const path = require("path");
+    const base = require('./webpack.base.conf');
+    // const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin"); //更好的错误输出
+
+    module.exports = merge(base, {
+        module: {
+            rules: [{
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader', 'postcss-loader']
+                },
+                {
+                    test: /\.scss$/,
+                    use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+                }
+            ]
+        },
+        plugins: [
+            new webpack.HotModuleReplacementPlugin(),           //热更新，还需在index.js里配置
+            // new FriendlyErrorsWebpackPlugin()                //优化 webpack 输出信息
+
+        ],
+
+        devtool: '#source-map',                                 //方便断点调试
+        // devtool: '#cheap-module-eval-source-map',            //构建速度快，采用eval执行
+
+        devServer: {
+            contentBase: path.resolve(__dirname, '../dist'),    //服务路径，存在于缓存中
+            host: 'localhost',                                  // 默认是localhost
+            port: 8080,                                         // 端口
+            open: true,                                         // 自动打开浏览器
+            hot: true,                                          // 开启热更新，只监听js文件，所以css假如被抽取后，就监听不到了
+            // inline: true,                                    //inline模式开启服务器(默认开启)
+            // proxy: xxx                                       //接口代理配置
+            // quiet: true                                      //和friendly-errors-webpack-plugin配合,但webpack自身的错误或警告在控制台不可见。
+            clientLogLevel: "none",                             //阻止打印那种搞乱七八糟的控制台信息
+        },
+        mode: 'development'                                     //开发环境
+
+    })
+```
+
+
+
+ 假如启用 `css-modules` 需要额外在 `css-loader` 的 `options` 里配置，使用方法可参考[①](https://webpack.docschina.org/loaders/css-loader/#modules)，[②](https://www.cnblogs.com/diligentYe/p/6602010.html)
+    ```javascript
+        {
+            loader:"css-loader",
+            options:{
+                modules: true,                                          //使用css-modules
+                minimize: true,                                         //压缩css 
+                importLoaders: 1,
+                localIdentName: "[name]__[local]__[hash:base64:5]"      //指定生成的名称
+            }
+        }
+    ```
+
 ## 一些 webpack 优化
 * `webpack-bundle-analyzer` 可视化定位体积大的模块
     ```javascript
@@ -189,7 +252,7 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
         ],
     ```
 
-* `happypack` 开启多个子进程，加快 webpack 打包速度，webpack4 需要 `happypack@next`, 由于其对`file-loader`, `url-loader` 支持的不友好，不建议对这两 loader 使用。
+* `happypack` 开启多个子进程，加快 webpack 构建/打包速度，webpack4 需要 `happypack@next`, 由于其对`file-loader`, `url-loader` 支持的不友好，不建议对这两 loader 使用。
     ```javascript
         const Happypack = require('happypack');
         const os = require('os');
@@ -205,17 +268,33 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
                 },
                 {
                     test: /\.css$/,
-                    use: [{
-                        loader:...
-                    },{
-                        loader:'happypack/loader?id=css'
-                    }]
+                    use: ExtractTextWebpackPlugin.extract({
+                        fallback: 'style-loader',
+                        use: 'happypack/loader?id=css',
+                        publicPath:'../'
+                    })
                 }
             ]
         }
+
+        //......
+        plugins:[
+            new Happypack({
+                id:"js",                                      //id 与 上面 loader 里的id一致
+                loaders:['babel-loader?cacheDirectory=true'], //相当于 上面 loader ; babel-loader的cacheDirectory表示缓存转换结果，提高webpack下次编译效率
+                threadPool:happyThreadPool,
+                verbose:true
+            }),
+            new Happypack({
+                id:"css",                                   
+                loaders:['css-loader', 'postcss-loader'],                                
+                threadPool:happyThreadPool,
+                verbose:true
+            })
+        ]
     ```
 
 ## 更多
 本代码示例 
-找到一个很优秀的参考demo [webpack4-demo](https://github.com/carrot-wu/webpack4-demo)
+找到一个不错的参考demo [webpack4-demo](https://github.com/carrot-wu/webpack4-demo)
 
