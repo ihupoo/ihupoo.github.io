@@ -356,6 +356,6 @@ webpack5 将对 css 的处理直接集成，期待能够解决 css 的痛点。
 ```
 
 ## 代码
-本代码示例 
+本代码示例 [threejs-water](https://github.com/ihupoo/threejs-water)
 找到一个不错的参考demo [webpack4-demo](https://github.com/carrot-wu/webpack4-demo)
 
