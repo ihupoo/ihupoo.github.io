@@ -330,7 +330,7 @@ webpack4 通过一系列默认配置，将 webpack3 常用的 plugin 都默认�
         })
     ],
 ```
-更多配置可以参考[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)，通过配合 `optimization`，可以实现自定义的css压缩；多个 css chunk 合并。目前依然有坑，比如可能会多加 61bytes 的js（我好像没遇到...），可以关注其 [issues](https://github.com/webpack-contrib/mini-css-extract-plugin/issues) 。
+更多配置可以参考[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)，通过配合 `optimization`，可以实现自定义的css压缩；多个 css chunk 合并。目前依然有坑，比如可能会多加 61bytes 的js（我好像没遇到...不过貌似是 webpack 的问题，即将解决了），可以关注其 [issues](https://github.com/webpack-contrib/mini-css-extract-plugin/issues) 。
 
 webpack5 将对 css 的处理直接集成，期待能够解决 css 的痛点。
 
@@ -357,5 +357,9 @@ webpack5 将对 css 的处理直接集成，期待能够解决 css 的痛点。
 
 ## 代码
 本代码示例 [threejs-water](https://github.com/ihupoo/threejs-water)
-找到一个不错的参考demo [webpack4-demo](https://github.com/carrot-wu/webpack4-demo)
+
+## 参考
+1. [webpack4-demo](https://github.com/carrot-wu/webpack4-demo)
+2. [webpack4-用之初体验，一起敲它十一遍](https://juejin.im/post/5adea0106fb9a07a9d6ff6de)
+3. [Webpack(含 4)配置详解——关注细节](https://juejin.im/post/5ae925cff265da0ba76f89b7#heading-13)
 
